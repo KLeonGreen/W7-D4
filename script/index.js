@@ -14,7 +14,7 @@ const getProduct = async () => {
   products.forEach((product) => {
     console.log(product);
     const productContainer = document.querySelector("#product-container");
-    productContainer.innerHTML += `<div class="col-2 mt-5">
+    productContainer.innerHTML += `<div class="col-3 mt-5">
                                         <div class="card" style="width: 200px; padding: 10px">
                                         <div class="card-img-top">
                                             <img src=${product.imageUrl}alt="" style="width: 100%" />
@@ -24,6 +24,8 @@ const getProduct = async () => {
                                             <h5>${product.brand}</h5>
                                             <h6>${product.description}</h6>
                                         </div>
+                                        <a href="../html/details.html?productID=${product._id}" class= "btn btn-primary" >View Details</a>
+                
                                         </div>
                                     </div`;
   });

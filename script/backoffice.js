@@ -1,3 +1,7 @@
+const param = new URLSearchParams(window.location.search);
+const productID = param.get("productID");
+console.log(productID);
+
 async function addNewProduct() {
   const newProduct = {
     name: document.querySelector("#product-name").value,
@@ -17,11 +21,17 @@ async function addNewProduct() {
     body: JSON.stringify(newProduct),
   };
 
-  const response = await fetch("https://striveschool-api.herokuapp.com/api/product/", options);
-  const data = await response.json();
-  console.log(data);
+  try {
+    const response = await fetch("https://striveschool-api.herokuapp.com/api/product/", options);
+    const data = await response.json();
+    console.log(data);
 
-  if (response.ok) {
-    alert("Product added successfully");
+    if (response.ok) {
+      alert("Product added successfully");
+    } else {
+      throw new error("Something Went Wrong");
+    }
+  } catch (error) {
+    console.error(error);
   }
 }
