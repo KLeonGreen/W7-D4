@@ -20,7 +20,7 @@ const displayProduct = (product) => {
   document.querySelector(".row").innerHTML = `  <div class="col-6 mt-5">
                             <h1>Product Details</h1>
                             <div class="card mt-5">
-                                <img src="../images/new-prod.jpeg" alt="" />
+                                <img src=${product.imageUrl} alt="" />
                             </div>
                             </div>
                             <div id="display-product" class="col-6 mt-5" style="display: flex; align-items: center">
